@@ -8,6 +8,26 @@
 //switch
 // 삼항 연산자
 
+// CH_10 
+// 비트연산자
+// #define 상수명 상수
+
+// 0x 할 경우 16진수
+#define HUNGRY  0x001  
+#define THIRSTY 0x002
+#define TIRED   0x004
+#define FIRE    0x008
+
+#define COLD    0x010
+#define POISON  0x020
+#define POISON  0x040
+#define POISON  0x080
+
+#define POISON  0x100
+#define POISON  0x200
+#define POISON  0x400
+#define POISON  0x800
+
 int main()
 {
     int data = 0;
@@ -108,5 +128,46 @@ int main()
         iTest = 200;
     }
 
+    // CH_10
+    // 비트 연산자
+    //Shift <<, >> 비트를 한칸씩 자리 옮김
+
+    //unsigned 경우 양의 정수 1byte
+    unsigned char byte = 1;
+
+    byte = byte << 1; 
+    byte <<= 1; // 2^n 배수
+    byte >>= 1; // 2^n 나눈 몫
+
+    
+    // 비트, &(and), |(or), ^(xor), ~(역), xor : 같으면 0, 틀리면 1
+    // 비트 단위로 연산
+    // & : 둘 다 1인 경우 1
+    // | : 둘 중 하나로 1이면 1
+    // ^ : 같으면 0, 틀리면 1
+    // ~ 1은 0으로, 0은 1로
+
+
+    // CH_11 // 인강 다시보기
+    // int 4 byte = 32bit
+    unsigned int iStatus = 0;
+
+    iStatus |= HUNGRY; //#define HUNGRY 1 = 1 비트 자리에 or
+    iStatus |= THIRSTY; //#define THIRSTY 1 = 2 비트 자리에 or
+    iStatus |= TIRED; //#define TIRED 1 = 4 비트 자리에 or
+
+    if (iStatus & THIRSTY) {
+        // 궁금한 비트 자리의 1일 경우 ture
+    }
+
+    // 특정 자리 비트 제거
+    iStatus &= ~THIRSTY;
+
+
+
     return 0;
 }
+
+
+
+
