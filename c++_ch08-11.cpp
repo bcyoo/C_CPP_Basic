@@ -150,20 +150,30 @@ int main()
 
     // CH_11 // 인강 다시보기
     // int 4 byte = 32bit
-    unsigned int iStatus = 0;
 
+    // 0000 
+    unsigned int iStatus = 0; 
+
+    // 0001
+    // 원래 상태를 그대로 반영하고 1bit에 |gkq
     iStatus |= HUNGRY; //#define HUNGRY 1 = 1 비트 자리에 or
+    
+    // 0010
     iStatus |= THIRSTY; //#define THIRSTY 1 = 2 비트 자리에 or
+    
+    // 0100
     iStatus |= TIRED; //#define TIRED 1 = 4 비트 자리에 or
 
     if (iStatus & THIRSTY) {
         // 궁금한 비트 자리의 1일 경우 ture
     }
 
-    // 특정 자리 비트 제거
+    // 특정 자리 비트 제거 (조건체크 x)
     iStatus &= ~THIRSTY;
-
-
+    // eg : iStatus = 1111 1101 0010
+    //      &                            
+    //      ~THRISTY = 1111 1111 1101 (THIRSTY = 0000 0000 0010)
+    //      == 1111 1101 0000
 
     return 0;
 }
