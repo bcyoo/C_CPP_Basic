@@ -7,7 +7,4 @@ int main() {
 
     iArray[4] = 10; // index는 0 ~ 9
 
-
-    // 포인터
-    // test
 }
