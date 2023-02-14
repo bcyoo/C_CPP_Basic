@@ -6,10 +6,10 @@ int Add(int a, int b) {
     return a + b;
 }
 
-int sub(int a, int b) {
+int Sub(int a, int b) {
     return a - b;
 }
 
-int mul(int a, int b) {
+int Mul(int a, int b) {
     return a * b;
 }
