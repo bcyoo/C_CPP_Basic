@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 // 변수의 종류
 // 1. 지역변수 - 스택 영역
 // 2. 전역변수 - 데이터 영역
@@ -22,6 +21,8 @@ int g_i = 0; // 메모리 영역: Data 영역
 // 프로그램 시작 시 생성
 // 프로그램 종료 시 해제
 
+#include "func.h" // header > 선언 + cpp > 구현으로 구성
+
 void Test();
 
 
@@ -32,6 +33,9 @@ int main() {
     Test();
 
     g_i = 0;
+
+
+    int data = Add(10, 20);
 
     return 0;
 }
